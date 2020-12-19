@@ -1,0 +1,40 @@
+Bạn thích công việc kiểu?
+(A) Xã hội, giao tiếp
+(B) Nghiên cứu, thiết kế
+A
+Bạn tiếp xúc với 1 ng theo xu hướng
+(A) Khách quan
+(B) Chủ quan
+A
+Bạn đánh giá sự kiện dựa trên?
+(A) Ý nghĩa, gía trị
+(B) Tính logic
+A
+Bạn là người có tác phong?
+(A) Thong thả, thoải mái
+(B) Nhanh nhẹn đúng giờ
+A
+Trong các cuộc giao tiếp bạn là người?
+(A) Chủ động bắt chuyện
+(B) Chỉ nói khi đc ng khác bắt chuyện
+A
+Bạn là người?
+(A) Có cái đầu lạnh
+(B) Có trái tim ấm
+A
+Tính cách của bạn?
+(A) Dễ chịu, thoải mái
+(B) Nghiêm chỉnh, quả quyết
+A
+Những người có tầm nhìn xa?
+(A) Khá thú vị
+(B) Khá khó hiểu
+A
+Một công việc nhàm chán khi?
+(A) Lhông có quy trình cụ thể
+(B) Không có tính sáng tạo
+A
+Bạn bị lôi cuốn bởi người?
+(A) Giàu trí tưởng tượng
+(B) Nắm bắt tình huống tốt
+A
