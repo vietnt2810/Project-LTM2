@@ -330,6 +330,10 @@ void randomize(Question arr[], int n) {
         swap(&arr[i], &arr[j]); 
     } 
 }
+
+// void convertAnswer(char a[5]) {
+
+// }
 //////////////////////////////////////// Question ////////////////////////////////////////
 void sendMess(char *content, int sockfd, struct sockaddr *servaddr){
 	int len, sendBytes;
@@ -463,7 +467,7 @@ int main(int argc, char* argv[]){
                                 sendMess(questionList[i].word, connfd, (struct sockaddr*) &cliaddr);
                                 readyCheck = 1;
                             }
-                            else if (strcmp(buff,"A") == 0 && readyCheck == 1) {
+                            else if ((strcmp(buff,"A") == 0 || strcmp(buff,"a") == 0) && readyCheck == 1) {
                                 check = check + 1;
                                 i = i + 1;
                                 if (i < 10) {
@@ -475,7 +479,7 @@ int main(int argc, char* argv[]){
                                     optionVar = 4;
                                 }
                             }
-                            else if (strcmp(buff,"B") == 0 && readyCheck == 1) {
+                            else if ((strcmp(buff,"B") == 0 || strcmp(buff,"b") == 0) && readyCheck == 1) {
                                 i = i + 1;
                                 if (i < 10) {
                                     sendMess(questionList[i].word, connfd, (struct sockaddr*) &cliaddr);
