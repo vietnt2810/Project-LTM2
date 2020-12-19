@@ -430,6 +430,11 @@ int main(int argc, char* argv[]){
                             sendMess("--- Nhập mật khẩu mới ---", connfd, (struct sockaddr*) &cliaddr);
                             optionVar = 2;
                         }
+                        else if (strcmp(buff,"3") == 0 && optionVar == 0) {
+                            sendMess("--- Đăng xuất thành công ---", connfd, (struct sockaddr*) &cliaddr);
+                            loginVar = 0;
+                            optionVar = 0;
+                        }
                         else {
                             switch (optionVar) {
                             case 2:

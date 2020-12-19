@@ -99,5 +99,9 @@ int main(int argc, char *argv[]){
         if(strcmp(server_response, "--- Mật khẩu không khớp ---") == 0){
             mainMenu();
         } 
+
+        if(strcmp(server_response, "--- Đăng xuất thành công ---") == 0){
+            loginMenu();
+        } 
     }
 }
