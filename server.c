@@ -358,7 +358,7 @@ int main(int argc, char* argv[]){
 
     makeQuestion();
     node *acc;
-	int loginVar = 0, optionVar = 0;
+	int loginVar = 0, optionVar = 0, i = 0, check = 0, readyCheck = 0;
     char username[20], password[20], tempPassword[20];
 	
     // communicate with client
@@ -435,8 +435,49 @@ int main(int argc, char* argv[]){
                             loginVar = 0;
                             optionVar = 0;
                         }
+                        else if (strcmp(buff,"1") == 0 && optionVar == 0) {
+                            sendMess("Nhập READY nếu bạn đã sẵn sàng", connfd, (struct sockaddr*) &cliaddr);
+                            optionVar = 1;
+                        }
                         else {
                             switch (optionVar) {
+                            case 1:
+                            if (strcmp(buff,"READY") == 0) {
+                                sendMess(questionList[i].word, connfd, (struct sockaddr*) &cliaddr);
+                                readyCheck = 1;
+                            }
+                            else if (strcmp(buff,"A") == 0 && readyCheck == 1) {
+                                check = check + 1;
+                                i = i + 1;
+                                if (i < 10) {
+                                    sendMess(questionList[i].word, connfd, (struct sockaddr*) &cliaddr);
+                                }
+                                else {
+                                    sendMess("Bạn đã trả lời xong, vui lòng nhập OK để nhận đáp án từ hệ thống", connfd, (struct sockaddr*) &cliaddr);
+                                    i = 0;
+                                    optionVar = 4;
+                                }
+                            }
+                            else if (strcmp(buff,"B") == 0 && readyCheck == 1) {
+                                i = i + 1;
+                                if (i < 10) {
+                                    sendMess(questionList[i].word, connfd, (struct sockaddr*) &cliaddr);
+                                }
+                                else {
+                                    sendMess("Bạn đã trả lời xong, vui lòng nhập OK để nhận đáp án từ hệ thống", connfd, (struct sockaddr*) &cliaddr); 
+                                    i = 0;
+                                    optionVar = 4;
+                                }
+                            }
+                            else {
+                                sendMess("--- Nhập sai rồi!!!! ---", connfd, (struct sockaddr*) &cliaddr);
+                                optionVar = 0;
+                                i = 0;
+                            }
+
+                            
+                            break;
+
                             case 2:
                             strcpy(tempPassword,buff);
                             sendMess("--- Nhập lại mật khẩu mới ---", connfd, (struct sockaddr*) &cliaddr);
@@ -455,8 +496,45 @@ int main(int argc, char* argv[]){
                                 optionVar = 0;
                                 }
                             break;
+
+                            case 4:
+                            if (strcmp(buff,"OK") == 0) {
+                                if (check < 3) {
+                                    sendMess("Bạn là người hướng có thiên hướng trực giác.\n => Phù hợp với các nghề về kĩ thuật.\nBạn đã chơi xong, vui lòng nhập OK để trở về menu chính.", connfd, (struct sockaddr*) &cliaddr);
+                                }
+                                else if (check >=3 && check < 7) {
+                                    sendMess("Bạn là người lý trí. phần lí trí là phần được đánh giá cao nhất, nó có vai trò tìm hiểu các thông tin liên quan dựa trên các bộ phân tiêu chí đúng sai, trái hay phải. Sau đó, suy luận một cách logic mới trực tiếp cho đáp án cụ thể nhất, có căn cứ nhất, có khoa học nhất.\n => Phù hợp với các nghề về logic cao.\nBạn đã chơi xong, vui lòng nhập bất kỳ để trở về menu chính.", connfd, (struct sockaddr*) &cliaddr);
+                                }
+                                else {
+                                    sendMess("Bạn là người hướng có thiên hướng cảm xúc,Phần cảm xúc của não bộ sẽ xem xét sự việc trên tổng thế các vấn đề cảm tính, yêu hay ghét, hận hay thu đồng thời các yếu tố đó có sự tác động qua lại lẫn nhau, không có một sự rạch ròi, đó là bản chất của vấn đề cảm xúc do não quyết định.\n => Phù hợp với các nghề về nghệ thuật.\nBạn đã chơi xong, vui lòng nhập bất kỳ để trở về menu chính.", connfd, (struct sockaddr*) &cliaddr);
+                                    optionVar = 5;
+                                }
                             }
-                        
+                            else {
+                                sendMess("--- Nhập sai rồi!!!! ---", connfd, (struct sockaddr*) &cliaddr);
+                                optionVar = 0;
+                                readyCheck = 0;
+                            }
+                            break;
+
+                            case 5:
+                            if (strcmp(buff,"OK") == 0){
+                                sendMess("--- Cảm ơn bạn đã tham gia chơi ---", connfd, (struct sockaddr*) &cliaddr);
+                                optionVar = 0;
+                                readyCheck = 0;
+                            }
+                            else {
+                                sendMess("--- Cảm ơn bạn đã tham gia chơi ---", connfd, (struct sockaddr*) &cliaddr);
+                                optionVar = 0;
+                                readyCheck = 0;
+                            }
+                            break;
+
+                            default:
+                            sendMess("--- Nhập sai rồi!!!! ---", connfd, (struct sockaddr*) &cliaddr);
+                            break;
+                            }
+                            
                         }
 
                         default:

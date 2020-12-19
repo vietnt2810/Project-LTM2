@@ -102,6 +102,14 @@ int main(int argc, char *argv[]){
 
         if(strcmp(server_response, "--- Đăng xuất thành công ---") == 0){
             loginMenu();
+        }  
+
+        if(strcmp(server_response, "--- Nhập sai rồi!!!! ---") == 0){
+            mainMenu();
+        } 
+
+        if(strcmp(server_response, "--- Cảm ơn bạn đã tham gia chơi ---") == 0){
+            mainMenu();
         } 
     }
 }
