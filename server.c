@@ -314,6 +314,22 @@ void makeQuestion(){
         free(buff);
     }
 }
+
+void swap(Question *a, Question *b) { 
+    Question temp = *a; 
+    *a = *b; 
+    *b = temp; 
+} 
+
+void randomize(Question arr[], int n) { 
+    srand(time(NULL)); 
+
+    for (int i = n-1; i > 0; i--) 
+    { 
+        int j = rand() % (i+1); 
+        swap(&arr[i], &arr[j]); 
+    } 
+}
 //////////////////////////////////////// Question ////////////////////////////////////////
 void sendMess(char *content, int sockfd, struct sockaddr *servaddr){
 	int len, sendBytes;
@@ -443,6 +459,7 @@ int main(int argc, char* argv[]){
                             switch (optionVar) {
                             case 1:
                             if (strcmp(buff,"READY") == 0) {
+                                randomize(questionList,10);
                                 sendMess(questionList[i].word, connfd, (struct sockaddr*) &cliaddr);
                                 readyCheck = 1;
                             }
