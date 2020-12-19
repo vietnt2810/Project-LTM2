@@ -31,10 +31,50 @@ Những người có tầm nhìn xa?
 (B) Khá khó hiểu
 A
 Một công việc nhàm chán khi?
-(A) Lhông có quy trình cụ thể
+(A) Không có quy trình cụ thể
 (B) Không có tính sáng tạo
 A
 Bạn bị lôi cuốn bởi người?
 (A) Giàu trí tưởng tượng
 (B) Nắm bắt tình huống tốt
+A
+Bạn nhìn nhận vấn đề bởi? 
+(A) Sự liên tưởng
+(B) Khả năng lý luận phân tích
+A
+Bạn thấy tâm đắc với bản thân bởi tính cách?
+(A) Chắc chắn trong tư tưởng
+(B) Cống hiến hết mình
+A
+Trong cuộc sống bạn cảm thấy có hứng thú với?
+(A) Những điều không lường trước
+(B) Những thứ theo kế hoạch
+A
+Tính cách nào giống bạn hơn?
+(A) Kiên quyết
+(B) Nhẹ nhàng
+A
+Trong 2 điều sau điều nào tồi tệ hơn?
+(A) Không công bằng
+(B) Tàn nhẫn
+A
+Đối với 1 vấn đề trong nhóm?
+(A) Độc lập giải quyết
+(B) Bàn bạc với mọi người
+A
+Lựa chọn bạn thường?
+(A) Tuân theo chuẩn mực
+(B) Đôi lúc không rõ nguyên nhân
+A
+Đối với những người mới gặp bạn thường?
+(A) Dễ bắt chuyện
+(B) Không biết nói gì
+A
+Bạn bị hấp dẫn bởi? 
+(A) Sự hòa hợp với mọi người
+(B) Sự nhất quán trong suy nghĩ
+A
+Trong các cuộc trò chuyện bạn thường?
+(A) Dè dặt
+(B) Thoải mái
 A
